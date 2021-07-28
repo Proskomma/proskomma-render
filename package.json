@@ -1,0 +1,35 @@
+{
+  "name": "proskomma-render",
+  "version": "0.5.1",
+  "description": "Generic rendering models for Proskomma GraphQL results",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "proskomma": "^0.4.49"
+  },
+  "devDependencies": {
+    "fs-extra": "^9.0.1",
+    "path": "^0.12.7",
+    "tap-nyc": "^1.0.3",
+    "tap-summary": "^4.0.0",
+    "tape": "^5.0.1"
+  },
+  "scripts": {
+    "test": "node_modules/tape/bin/tape src/test/code/*.js | node_modules/tap-summary/bin/cmd.js",
+    "rawTest": "node_modules/tape/bin/tape src/test/code/*.js",
+    "oneTest": "node_modules/tape/bin/tape src/test/code/$TESTSCRIPT.js",
+    "coverage": "node_modules/nyc/bin/nyc.js node_modules/tape/bin/tape src/test/code/*.js | node_modules/tap-nyc/bin/cmd.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Proskomma/proskomma-render.git"
+  },
+  "author": "Mark Howe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Proskomma/proskomma-render/issues"
+  },
+  "homepage": "https://github.com/Proskomma/proskomma-render#readme"
+}
