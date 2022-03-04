@@ -1,15 +1,14 @@
 {
   "name": "proskomma-render",
-  "version": "0.5.7",
+  "version": "0.6.0",
   "description": "Generic rendering models for Proskomma GraphQL results",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
-  "dependencies": {
-    "proskomma": "^0.4.81"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "proskomma": "^0.6.4",
     "fs-extra": "^9.0.1",
     "path": "^0.12.7",
     "tap-nyc": "^1.0.3",
