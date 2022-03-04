@@ -8,7 +8,7 @@ const doModelQuery = async (pk, docSetIds, documentIds) => {
         '    id' +
         '    selectors { key value }' +
         '    tags' +
-        `    documents${documentIds.length === 0 ? '' : `(ids:[${documentIds.map(d => `"${d}"`).join(', ')}])`} {` +
+        `    documents${documentIds.length === 0 ? '(' : `(ids:[${documentIds.map(d => `"${d}"`).join(', ')}] `}sortedBy: "paratext") {` +
         '      id' +
         '      headers { key value }' +
         '      idParts { type parts }' +
