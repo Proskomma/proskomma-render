@@ -39,11 +39,12 @@ class ScriptureDocSet {
         })
     }
 
-    addAction(actionType, test, action) {
+    addAction(actionType, test, action, continueAfter) {
+        continueAfter = !!continueAfter;
         if (actionType in this.classActions) {
-            this.classActions[actionType].push({test, action});
+            this.classActions[actionType].push({test, action, continueAfter});
         } else if (this.delegatedActionKeys.has(actionType)) {
-            this.documentModels.default.addAction(actionType, test, action);
+            this.documentModels.default.addAction(actionType, test, action, continueAfter);
         } else {
             throw new Error(`Unknown action type '${actionType}' in docSet`);
         }
@@ -62,7 +63,9 @@ class ScriptureDocSet {
         for (const classAction of classActions) {
             if (classAction.test(this.context, data)) {
                 classAction.action(this, this.context, data);
-                break;
+                if (!classAction.continueAfter) {
+                    break;
+                }
             }
         }
     }
